@@ -1,4 +1,4 @@
-# README - Controle de GPIOs com BitDogLab
+# Controle de GPIOs com BitDogLab
 
 ## Descrição do Projeto
 Este projeto implementa o controle de pinos GPIO utilizando a ferramenta educacional BitDogLab (versão 6.3) com o microcontrolador RP2040. A interação é realizada por meio da porta serial UART, interpretando comandos digitados pelo usuário para acionar LEDs RGB e um buzzer. A estrutura do projeto foi organizada para facilitar a modularização e a integração dos componentes.
