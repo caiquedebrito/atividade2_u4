@@ -3,6 +3,12 @@
 ## Descrição do Projeto
 Este projeto implementa o controle de pinos GPIO utilizando a ferramenta educacional BitDogLab (versão 6.3) com o microcontrolador RP2040. A interação é realizada por meio da porta serial UART, interpretando comandos digitados pelo usuário para acionar LEDs RGB e um buzzer. A estrutura do projeto foi organizada para facilitar a modularização e a integração dos componentes.
 
+## Demonstração do projeto
+
+![Projeto no wokwi](./assets/wokwi-project.png)
+
+<video height="365" src="./assets/presentation.mp4" controls></video>
+
 ## Funcionamento
 1. **Comandos Disponíveis:** O sistema aceita os seguintes comandos:
     - `OFF`: Desliga todos os LEDs.
