@@ -7,7 +7,7 @@ Este projeto implementa o controle de pinos GPIO utilizando a ferramenta educaci
 
 ![Projeto no wokwi](./assets/wokwi-project.png)
 
-<video height="365" src="./assets/presentation.mp4" controls></video>
+https://github.com/user-attachments/assets/c935a04e-8be1-4c2a-b42e-c568fe611ad4
 
 ## Funcionamento
 1. **Comandos Disponíveis:** O sistema aceita os seguintes comandos:
