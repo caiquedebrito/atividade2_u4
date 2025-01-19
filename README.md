@@ -37,7 +37,7 @@ O circuito foi desenvolvido no Wokwi e inclui os seguintes componentes:
 ## Como Executar
 1. Conecte a ferramenta educacional BitDogLab ao computador por meio de um cabo micro-USB.
 2. Compile e carregue o código no microcontrolador RP2040.
-3. Utilize um terminal serial (ex.: PuTTY, minicom) para enviar os comandos ao microcontrolador.
+3. Utilize um terminal serial (ex.: PuTTY) para enviar os comandos ao microcontrolador.
 4. Observe o comportamento dos LEDs e do buzzer conforme os comandos enviados.
 
 ## Conclusão
