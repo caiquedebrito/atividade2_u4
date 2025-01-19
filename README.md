@@ -35,10 +35,15 @@ O circuito foi desenvolvido no Wokwi e inclui os seguintes componentes:
 - **Renan:** Criação dos arquivos `hash.c` e `hash.h` para o cálculo do hash dos comandos, além da implementação da função para capturar os comandos digitados pelo usuário.
 
 ## Como Executar
-1. Conecte a ferramenta educacional BitDogLab ao computador por meio de um cabo micro-USB.
-2. Compile e carregue o código no microcontrolador RP2040.
-3. Utilize um terminal serial (ex.: PuTTY) para enviar os comandos ao microcontrolador.
-4. Observe o comportamento dos LEDs e do buzzer conforme os comandos enviados.
+
+1. Faça o clone do desse repositório:
+``
+git clone https://github.com/caiquedebrito/atividade2_u4.git
+``
+2. Conecte a ferramenta educacional BitDogLab ao computador por meio de um cabo micro-USB.
+3. Compile e carregue o código no microcontrolador RP2040.
+4. Utilize um terminal serial (ex.: PuTTY) para enviar os comandos ao microcontrolador.
+5. Observe o comportamento dos LEDs e do buzzer conforme os comandos enviados.
 
 ## Conclusão
 Gostaríamos de agradecer à equipe do Embarcatech por proporcionar esta atividade desafiadora e enriquecedora. Foi uma experiência nova que agregou bastante a cada integrante do grupo, tanto individualmente quanto coletivamente, permitindo-nos desenvolver habilidades práticas em sistemas embarcados e colaboração em equipe.
