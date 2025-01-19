@@ -35,7 +35,7 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(atividade2_u4 atividade2_u4.c )
+add_executable(atividade2_u4 atividade2_u4.c hash.c)
 
 pico_set_program_name(atividade2_u4 "atividade2_u4")
 pico_set_program_version(atividade2_u4 "0.1")
