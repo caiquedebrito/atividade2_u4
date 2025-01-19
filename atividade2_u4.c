@@ -12,6 +12,7 @@
 #define BUZZER_PIN 21
 #define BUZZER_FREQ 4000
 
+const unsigned long OFF = 193465408;
 const unsigned long RED = 193468640;
 const unsigned long GREEN = 221376950;
 const unsigned long BLUE = 2088931085;
@@ -25,9 +26,73 @@ char command[10];
 unsigned long hash_code;
 
 void setup();
+void turn_on_led(uint pin);
+void turn_off_led(uint pin);
+void to_uppercase(char *str);
+void get_command();
 void turn_leds(bool red, bool green, bool blue);
 void pwm_init_buzzer(uint pin);
 void beep(uint pin, uint duration_ms);
+void turn_on_component(unsigned long hash_code);
+
+int main()
+{
+    setup();
+
+    while (true) {
+        printf("Comandos disponíveis: OFF, RED, GREEN, BLUE, WHITE, YELLOW, CYAN, MAGENTA, BUZZER\n");
+        printf("Insira um comando: \n");
+        get_command();
+        to_uppercase(command);
+        hash_code = hash((unsigned char *)command);
+        turn_on_component(hash_code);
+        sleep_ms(1000);
+    }
+}
+
+void turn_on_component(unsigned long hash_code) {
+    switch (hash_code) {
+        case OFF:
+            printf("Desligando todos os leds\n");
+            turn_leds(0,0,0);
+            break;
+        case RED:
+            printf("Ligando led vermelho\n");
+            turn_leds(1,0,0);
+            break;
+        case GREEN:
+            printf("Ligando led verde\n");
+            turn_leds(0,0,1);
+            break;
+        case BLUE:
+            printf("Ligando led azul\n");
+            turn_leds(0,1,0);
+            break;
+        case WHITE:
+            printf("Ligando led branco\n");
+            turn_leds(1,1,1);
+            break;
+        case YELLOW:
+            printf("Ligando led amarelo\n");
+            turn_leds(1,0,1);
+            break;
+        case CYAN:
+            printf("Ligando led ciano\n");
+            turn_leds(0,1,1);
+            break;
+        case MAGENTA:
+            printf("Ligando led magenta\n");
+           turn_leds(1,1,0);
+            break;
+        case BUZZER:
+            printf("Acionando buzzer\n");
+            beep(BUZZER_PIN, 500);
+            break;
+        default:
+            printf("Comando desconhecido\n");
+            break;
+    }
+}
 
 void setup() {
     stdio_init_all();
@@ -72,6 +137,40 @@ void beep(uint pin, uint duration_ms) {
 
     // Pausa entre os beeps
     sleep_ms(100); // Pausa de 100ms
+}
+
+void to_uppercase(char *str) {
+  for (int i = 0; str[i] != '\0'; i++) {
+    if (str[i] >= 'a' && str[i] <= 'z') {
+        str[i] -= 32;
+    }
+  }
+}
+
+void get_command() {
+    int i = 0;
+    while (true) {
+        int c = getchar_timeout_us(100000);
+        if (c != PICO_ERROR_TIMEOUT) {
+            if (c == '\n' || c == '\r') {
+                command[i] = '\0';
+                break;
+            }
+            command[i++] = (char)c;
+            if (i >= sizeof(command) - 1) {
+                command[i] = '\0';
+                break;
+            }
+        }
+    }
+}
+
+void turn_on_led(uint pin) {
+    gpio_put(pin, 1);
+}
+
+void turn_off_led(uint pin) {
+    gpio_put(pin, 0);
 }
 
 void turn_leds(bool red, bool blue, bool green){
