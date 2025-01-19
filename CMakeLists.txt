@@ -46,7 +46,9 @@ pico_enable_stdio_usb(atividade2_u4 1)
 
 # Add the standard library to the build
 target_link_libraries(atividade2_u4
-        pico_stdlib)
+        pico_stdlib
+        hardware_pwm
+        hardware_clocks)
 
 # Add the standard include files to the build
 target_include_directories(atividade2_u4 PRIVATE
@@ -59,4 +61,3 @@ target_link_libraries(atividade2_u4
         )
 
 pico_add_extra_outputs(atividade2_u4)
-
